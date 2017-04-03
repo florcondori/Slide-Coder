@@ -4,17 +4,21 @@ window.addEventListener('load', function(){
 
 	publicar.addEventListener('click', function(event){
 		event.preventDefault();
-		var mensaje = document.getElementById("mensaje-post");
-		var usuario = document.getElementById("usuario");
+		var mensaje = document.getElementById("mensaje-post").value;
+		var usuario = document.getElementById("usuario").value;
+		if(usuario.trim().length!=0 && mensaje.trim().length!=0){
+			if(divContenerdorPost.hasChildNodes()){
+				var firstChild = divContenerdorPost.firstElementChild;
+				divContenerdorPost.insertBefore(crearPost(mensaje,usuario),firstChild);
+			}else{
+				divContenerdorPost.appendChild(crearPost(mensaje,usuario));
+			}
 
-		console.log(divContenerdorPost.hasChildNodes());
-		if(divContenerdorPost.hasChildNodes()){
-			var firstChild = divContenerdorPost.firstElementChild;
-			divContenerdorPost.insertBefore(crearPost(mensaje.value,usuario.value),firstChild);
+			document.getElementById('form-publicar').reset();
 		}else{
-			divContenerdorPost.appendChild(crearPost(mensaje.value,usuario.value));
+			alert("Los dos campos son obligatorio");
 		}
-		document.getElementById('form-publicar').reset();
+	
 	});
 });
 
