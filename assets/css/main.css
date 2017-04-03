@@ -1,6 +1,34 @@
 .div-post{
 	border:1px solid grey;
 	border-radius:5px;
-	width: 350px;
+	width: 400px;
 	height: auto;
+	margin-top:10px;
+	padding: 10px;
+}
+.div-site{
+	position: absolute;
+	width: 400px;
+	left:50%;
+	margin-left: -200px;
+}
+div p{
+	margin:2px; 
+}
+textarea{
+	width: 400px;
+	margin-top: 5px;
+}
+input{
+	width: 400px;
+}
+h1{
+	text-align: center;
+}
+button{
+	margin-left: 90%;
+}
+.span-nombre-usuario{
+	margin-left: 70%;
+	font-style: italic;
 }

@@ -14,6 +14,7 @@ window.addEventListener('load', function(){
 		}else{
 			divContenerdorPost.appendChild(crearPost(mensaje.value,usuario.value));
 		}
+		document.getElementById('form-publicar').reset();
 	});
 });
 
